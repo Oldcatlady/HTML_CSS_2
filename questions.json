@@ -1,0 +1,338 @@
+[
+    {
+"frage": "Was passiert hier?\n\n.container {\n display: grid;\n grid-template-areas:\n \"header header\"\n \"main sidebar\";\n}\n\n.item-1 { grid-area: header; }\n.item-2 { grid-area: main; }\n.item-3 { grid-area: sidebar; }\n",
+"antworten": [
+"Alle Elemente werden übereinander gestapelt",
+"Das Layout funktioniert nur mit Flexbox",
+"Der Browser ignoriert grid-template-areas",
+"Die Elemente werden automatisch korrekt im Raster platziert",
+"Es entsteht ein Fehler wegen fehlendem gap"
+],
+"korrekteAntwort": 3,
+"erklaerung": "Wenn Namen korrekt definiert und zugewiesen sind, platziert Grid die Elemente automatisch in die entsprechenden Bereiche."
+},
+{
+"frage": "Was ist der häufigste Fehler bei grid-template-areas?",
+"antworten": [
+"Zu viele Farben verwendet",
+"Falsche Reihenfolge von HTML-Tags",
+"Nicht übereinstimmende Namen zwischen CSS und grid-area",
+"Zu viele divs im HTML",
+"Fehlendes margin im Body"
+],
+"korrekteAntwort": 2,
+"erklaerung": "Wenn der Name im grid-area nicht exakt dem Namen im grid-template-areas entspricht, funktioniert die Zuordnung nicht."
+},
+{
+"frage": "Welche Aussage beschreibt den Vorteil von grid-template-areas am besten?",
+"antworten": [
+"Es ersetzt HTML komplett",
+"Es macht Layouts visuell leichter verständlich und wartbar",
+"Es funktioniert nur in modernen Browsern ohne CSS",
+"Es ist schneller als Flexbox",
+"Es ist nur für Animationen gedacht"
+],
+"korrekteAntwort": 1,
+"erklaerung": "Grid Areas ermöglichen eine visuelle Darstellung des Layouts im Code, was die Struktur leichter lesbar und wartbar macht."
+},
+{
+"frage": "Was passiert, wenn ein Element keinem grid-area zugewiesen wird?",
+"antworten": [
+"Es wird automatisch gelöscht",
+"Es wird außerhalb des Grids versteckt",
+"Es bleibt im normalen Grid-Fluss und kann das Layout stören",
+"Der Browser bricht ab",
+"Es wird automatisch zentriert"
+],
+"korrekteAntwort": 2,
+"erklaerung": "Ohne grid-area wird das Element im Standard-Grid-Flow platziert, was das geplante Layout verändern kann."
+},
+{
+"frage": "Warum ist justify-content: center; in diesem Layout wirkungslos?\n\n.container {\n display: flex;\n}\n.item {\n width: 100%;\n}\n",
+"antworten": [
+"Weil Items den gesamten Platz einnehmen",
+"Weil justify-content deaktiviert ist",
+"Weil Flexbox keine Breiten erlaubt",
+"Weil align-items fehlt",
+"Weil Grid benötigt wird"
+],
+"korrekteAntwort": 0,
+"erklaerung": "Wenn ein Element bereits 100% Breite hat, gibt es keinen freien Raum mehr, den justify-content verteilen könnte."
+},
+{
+"frage": "Warum wirkt align-content in diesem Flex-Container nicht?\n\n.container {\n display: flex;\n flex-wrap: nowrap;\n}\n",
+"antworten": [
+"Weil align-content nur bei mehreren Zeilen funktioniert",
+"Weil Flexbox deaktiviert ist",
+"Weil align-content nur horizontal wirkt",
+"Weil justify-content fehlt",
+"Weil CSS keine vertikale Steuerung erlaubt"
+],
+"korrekteAntwort": 0,
+"erklaerung": "align-content steuert mehrere Flex-Zeilen. Ohne Umbruch (nowrap) existiert nur eine Zeile, daher kein Effekt."
+},
+{
+"frage": "Warum scheint flex-grow in diesem Beispiel nicht zu funktionieren?\n\n.item {\n flex-grow: 1;\n width: 200px;\n}\n.container {\n display: flex;\n}\n",
+"antworten": [
+"flex-grow funktioniert nur mit Grid",
+"width verhindert jede Flex-Wirkung",
+"flex-grow benötigt zusätzlichen freien Platz im Container",
+"flex-grow funktioniert nur mit align-items",
+"CSS ignoriert flex-grow bei festen Größen"
+],
+"korrekteAntwort": 2,
+"erklaerung": "flex-grow verteilt nur freien Platz. Wenn kein zusätzlicher Raum vorhanden ist, bleibt die Wirkung unsichtbar."
+},
+{
+"frage": "Warum wirkt justify-content nicht sichtbar bei einem einzigen Flex-Item?",
+"antworten": [
+"Weil Flexbox nur bei mehreren Items funktioniert",
+"Weil ein einzelnes Element keinen Verteilungsraum erzeugt",
+"Weil justify-content nur bei Grid funktioniert",
+"Weil CSS automatisch zentriert",
+"Weil align-items Vorrang hat"
+],
+"korrekteAntwort": 1,
+"erklaerung": "justify-content verteilt mehrere Elemente oder freien Raum. Mit nur einem Item gibt es nichts zu verteilen."
+},
+{
+"frage": "Was beschreibt die Einheit fr in CSS Grid am besten?",
+"antworten": [
+"Eine feste Pixelgröße",
+"Ein Prozentwert relativ zur Seite",
+"Ein absoluter Abstand zwischen Elementen",
+"Ein Anteil am verfügbaren Restplatz im Grid-Container",
+"Eine feste Zeilenhöhe"
+],
+"korrekteAntwort": 3,
+"erklaerung": "fr steht für 'fraction' und verteilt den verfügbaren freien Platz im Grid flexibel zwischen den Spalten."
+},
+{
+"frage": "Was ist der grundlegende Unterschied zwischen px und % in CSS?",
+"antworten": [
+"px ist flexibel, % ist fix",
+"px basiert auf Bildschirmfarbe, % auf Textgröße",
+"px ist absolut, % ist relativ zum Eltern-Element",
+"beide sind immer gleich",
+"px funktioniert nur in Grid"
+],
+"korrekteAntwort": 2,
+"erklaerung": "Pixel sind feste Einheiten, während Prozentwerte sich am umgebenden (Eltern-)Element orientieren und dadurch skalierbar sind."
+},
+{
+"frage": "Warum ist fr in CSS Grid oft flexibler als px oder %?",
+"antworten": [
+"Weil fr automatisch Schriftgrößen anpasst",
+"Weil fr keine Maßeinheit ist",
+"Weil fr immer feste Werte ersetzt",
+"Weil fr den verfügbaren Platz dynamisch aufteilt",
+"Weil fr nur für Farben verwendet wird"
+],
+"korrekteAntwort": 3,
+"erklaerung": "fr reagiert auf den verfügbaren Platz im Grid und passt sich automatisch an, wenn sich die Containergröße ändert."
+},
+{
+"frage": "Was passiert bei folgendem Grid-Layout?\n\n.container {\n display: grid;\n grid-template-columns: 200px 1fr 1fr;\n}\n",
+"antworten": [
+"Alle Spalten sind gleich breit",
+"Die erste Spalte ist flexibel und wächst am stärksten",
+"Grid funktioniert nur mit fr, daher Fehler",
+"Alle Spalten sind 200px breit",
+"Die erste Spalte wird ignoriert"
+],
+"korrekteAntwort": 2,
+"erklaerung": "Der feste Wert 200px wird zuerst reserviert. Danach teilen sich die beiden fr-Spalten den verbleibenden Platz."
+},
+{
+"frage": "Was passiert bei folgendem Grid?\n\n.container {\n display: grid;\n grid-template-columns: 1fr 2fr;\n}\n",
+"antworten": [
+"Beide Spalten sind gleich breit",
+"Die erste Spalte ist doppelt so groß wie die zweite",
+"Die zweite Spalte ist doppelt so groß wie die erste",
+"Beide Spalten haben feste Pixelwerte",
+"Grid funktioniert hier nicht"
+],
+"korrekteAntwort": 2,
+"erklaerung": "Die fr-Werte werden als Verhältnis interpretiert. 1fr zu 2fr bedeutet: zweite Spalte bekommt doppelt so viel Platz."
+},
+{
+"frage": "Warum kann % in Grid manchmal unerwartet wirken?",
+"antworten": [
+"Weil % immer fix berechnet wird",
+"Weil % sich am Eltern-Container orientiert und nicht am verfügbaren Restplatz",
+"Weil % nur für Text gilt",
+"Weil % automatisch in px umgewandelt wird",
+"Weil Grid keine Prozentwerte unterstützt"
+],
+"korrekteAntwort": 1,
+"erklaerung": "Prozentwerte beziehen sich auf das Eltern-Element und berücksichtigen nicht automatisch den verbleibenden freien Raum wie fr."
+},
+{
+"frage": "Welche Aussage beschreibt den Unterschied zwischen fr und % am besten?",
+"antworten": [
+"fr ist absolut, % ist relativ zum Bildschirm",
+"fr verteilt freien Platz im Grid, % bezieht sich auf Containergröße",
+"fr ist nur für Höhe, % nur für Breite",
+"fr und % sind identisch",
+"fr funktioniert nur bei Flexbox"
+],
+"korrekteAntwort": 1,
+"erklaerung": "fr arbeitet mit dem verfügbaren Restplatz, während % sich direkt am Eltern-Container orientiert."
+},
+{
+"frage": "Was ist der Effekt von grid-template-columns: 100px 1fr 2fr?",
+"antworten": [
+"Alle Spalten sind gleich groß",
+"Die zweite und dritte Spalte sind fix",
+"Die erste Spalte ist flexibel und wächst am meisten",
+"Die erste Spalte ist fix, die restlichen teilen den freien Platz im Verhältnis 1:2",
+"Grid ignoriert px und fr gemeinsam"
+],
+"korrekteAntwort": 3,
+"erklaerung": "Zuerst wird 100px reserviert, danach wird der verbleibende Platz zwischen 1fr und 2fr im Verhältnis verteilt."
+},
+{
+"frage": "Wann ist Flexbox die bessere Wahl als Grid?",
+"antworten": [
+"Wenn ein Layout aus Zeilen ODER Spalten besteht (1D-Layout)",
+"Wenn ein komplettes Seitenlayout mit Header, Sidebar und Footer gebaut wird",
+"Wenn Elemente absolut positioniert werden sollen",
+"Wenn mehrere unabhängige Raster gleichzeitig nötig sind",
+"Wenn nur Tabellen erstellt werden"
+],
+"korrekteAntwort": 0,
+"erklaerung": "Flexbox eignet sich für eindimensionale Layouts, also entweder eine Reihe oder eine Spalte, z. B. Formulare oder Navigationsleisten."
+},
+{
+"frage": "Warum ist CSS Grid besser geeignet für 2D-Layouts als Flexbox?",
+"antworten": [
+"Weil Grid nur für Farben zuständig ist",
+"Weil Grid automatisch HTML korrigiert",
+"Weil Grid nur eine Richtung unterstützt",
+"Weil Grid Zeilen und Spalten gleichzeitig steuern kann",
+"Weil Flexbox keine Breiten unterstützt"
+],
+"korrekteAntwort": 3,
+"erklaerung": "Grid erlaubt die gleichzeitige Definition von Reihen und Spalten, wodurch komplexe Layouts leichter aufgebaut werden können."
+},
+{
+"frage": "Warum reicht Flexbox oft für Formularfelder aus?",
+"antworten": [
+"Weil Formulare immer zweidimensional sind",
+"Weil Formulare meist nur vertikal oder horizontal angeordnet werden",
+"Weil Grid keine Formulare unterstützt",
+"Weil Flexbox automatisch Labels erstellt",
+"Weil HTML sonst nicht funktioniert"
+],
+"korrekteAntwort": 1,
+"erklaerung": "Formulare bestehen meist aus einer einfachen linearen Struktur (eine Richtung), was perfekt zu Flexbox passt."
+},
+{
+"frage": "Ein Grid ist definiert, aber alle Elemente stehen untereinander. Was ist die wahrscheinlichste Ursache?\n\n.container {\n grid-template-columns: 1fr 1fr 1fr;\n}\n\nWas fehlt?",
+"antworten": [
+"display: grid fehlt",
+"gap fehlt",
+"align-items fehlt",
+"grid-auto-flow fehlt",
+"position: relative fehlt"
+],
+"korrekteAntwort": 0,
+"erklaerung": "Ohne display: grid wird das Element kein Grid-Container, daher werden die Spaltenregeln ignoriert."
+},
+{
+"frage": "Warum funktioniert dieses Grid-Layout nicht wie erwartet?\n\n.container {\n display: grid;\n}\n.item {\n grid-column: span 2;\n}\n\nAlle Items bleiben gleich groß.",
+"antworten": [
+"grid-column funktioniert nur mit Flexbox",
+"Es fehlen definierte Spalten im Container",
+"span 2 ist kein gültiger Wert",
+"Grid ignoriert Items grundsätzlich",
+"CSS benötigt JavaScript dafür"
+],
+"korrekteAntwort": 1,
+"erklaerung": "Ohne grid-template-columns gibt es keine definierten Spalten, daher kann span keine sichtbare Wirkung entfalten."
+},
+{
+"frage": "Warum funktioniert dieses Layout nicht korrekt?\n\n.container {\n display: flex;\n}\n.item {\n flex-direction: row;\n}\n",
+"antworten": [
+"flex-direction gehört nicht zu Items, sondern zum Container",
+"Flexbox funktioniert nicht ohne Grid",
+"display: flex ist falsch",
+"row ist kein gültiger Wert",
+"CSS ignoriert Flexbox Regeln"
+],
+"korrekteAntwort": 0,
+"erklaerung": "flex-direction ist eine Container-Eigenschaft und steuert die Hauptachse der Flexbox, nicht einzelne Items."
+},
+{
+"frage": "Ein Layout soll 2D aufgebaut sein (z. B. Sidebar + Content + Footer). Welche Lösung ist korrekt und warum?",
+"antworten": [
+"Flexbox, weil es einfacher ist",
+"Inline-block, weil es moderner ist",
+"Grid, weil es Zeilen und Spalten gleichzeitig verwalten kann",
+"Position absolute, weil es flexibel ist",
+"Table, weil es CSS ersetzt"
+],
+"korrekteAntwort": 2,
+"erklaerung": "Komplexe Layouts mit mehreren Bereichen profitieren von Grid, da es beide Achsen gleichzeitig kontrolliert."
+},
+{
+"frage": "Warum funktioniert dieses Layout nicht?\n\n.container {\n display: grid;\n}\n\n.item {\n width: 100%;\n}\n\nAlles bleibt untereinander.",
+"antworten": [
+"Grid wird durch width deaktiviert",
+"Grid funktioniert nur mit flex-grow",
+"Es fehlen definierte Spalten oder Reihen",
+"CSS Grid benötigt Flexbox als Basis",
+"width verhindert Grid automatisch"
+],
+"korrekteAntwort": 2,
+"erklaerung": "Ohne definierte grid-template-columns oder -rows bleibt das Grid im Standardfluss und wirkt wie ein Block-Layout."
+},
+{
+"frage": "Wann würde man Grid NICHT verwenden?",
+"antworten": [
+"Für komplexe Seitenlayouts",
+"Für Tabellen-ähnliche Strukturen",
+"Für ein einfaches Formular untereinander",
+"Für zweidimensionale Layouts",
+"Für Dashboard-Layouts"
+],
+"korrekteAntwort": 2,
+"erklaerung": "Einfache lineare Layouts sind kein typischer Grid-Anwendungsfall; Flexbox ist hier effizienter."
+},
+{
+"frage": "Was macht grid-template-areas grundsätzlich?",
+"antworten": [
+"Es definiert Farben für Grid-Elemente",
+"Es erstellt automatische Abstände zwischen Elementen",
+"Es benennt Bereiche im Grid visuell als Textlayout",
+"Es ersetzt display: grid",
+"Es steuert nur die Höhe von Elementen"
+],
+"korrekteAntwort": 2,
+"erklaerung": "grid-template-areas erlaubt es, ein Layout in einer Art Textbild zu definieren, das die Platzierung der Bereiche beschreibt."
+},
+{
+"frage": "Was passiert, wenn die Anzahl der Spalten in grid-template-areas nicht zu grid-template-columns passt?",
+"antworten": [
+"Der Browser ignoriert nur die letzte Zeile",
+"Das Layout wird automatisch korrigiert",
+"CSS wird in Flexbox umgewandelt",
+"Der Browser ignoriert die gesamte grid-template-areas Regel",
+"Es entsteht nur ein kleiner Abstand"
+],
+"korrekteAntwort": 3,
+"erklaerung": "grid-template-areas ist streng: jede Zeile muss exakt zur Spaltenanzahl passen, sonst wird die gesamte Definition ungültig."
+},
+{
+"frage": "Welche Aussage zu grid-area ist korrekt?",
+"antworten": [
+"grid-area bestimmt die Farbe eines Elements",
+"grid-area verbindet ein Element mit einem benannten Bereich im Grid",
+"grid-area ersetzt flex-grow",
+"grid-area funktioniert nur ohne grid-template-areas",
+"grid-area ist nur für Textformatierung"
+],
+"korrekteAntwort": 1,
+"erklaerung": "grid-area weist ein Element einem benannten Bereich zu, der in grid-template-areas definiert wurde."
+}
+]
